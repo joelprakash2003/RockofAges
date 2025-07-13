@@ -3297,7 +3297,8 @@ input, select, textarea {
 					}
 
 					#nav ul li a.active {
-						background-color: #ffffff;
+						background-color: #1d4ed8;
+						color: #ffffff !important;
 						box-shadow: none;
 					}
 
