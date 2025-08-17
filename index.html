@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" type="image/png" href="images/cropped_circle_image.png" />
+		<link rel="preload" as="image" href="images/cropped_circle_image.png" imagesrcset="images/cropped_circle_image.png 1x" />
+		<link rel="preload" as="image" href="images/new images/close-up-people-holding-hands.jpg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -12,13 +14,21 @@
 	</head>
 	<body class="is-preload">
 
+		<!-- Hiring Banner -->
+		<div class="hiring-banner">
+			<a href="careers.html" class="hiring-link" target="_blank" rel="noopener">
+				<span class="blink-dot" aria-hidden="true"></span>
+				We're hiring — Join our growing team. Apply now →
+			</a>
+		</div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header" class="alt">
 						<div class="header-bg-image">
-							<span class="logo"><img src="images/cropped_circle_image.png" alt="Rock of Ages Home Health Care" /></span>
+							<span class="logo"><img src="images/cropped_circle_image.png" alt="Rock of Ages Home Health Care" decoding="async" fetchpriority="high" loading="eager" /></span>
 							<h1>Rock of Ages</h1>
 							<p>Home Health Care Specialists You Can Trust</p>
 						</div>
@@ -52,7 +62,7 @@
 											<a href="tel:972-746-2225" class="contact-btn" onclick="copyToClipboard('972-746-2225')">Fax us today: 972-746-2225</a>
 										</div>
 									</div>
-									<span class="image"><img src="images/doctor-holding-hands-with-senior-patient.jpg" alt="Home Health Care" /></span>
+									<span class="image"><img src="images/doctor-holding-hands-with-senior-patient.jpg" alt="Home Health Care" decoding="async" loading="lazy" /></span>
 								</div>
 							</section>
 
@@ -68,7 +78,7 @@
 								<div class="services-grid">
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Skilled Nursing Care.jpg" alt="Skilled Nursing Care" />
+											<img src="images/new images/Skilled Nursing Care.jpg" alt="Skilled Nursing Care" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Skilled Nursing Care</h3>
@@ -77,7 +87,7 @@
 									</div>
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Physical Therapy.jpg" alt="Physical Therapy" />
+											<img src="images/new images/Physical Therapy.jpg" alt="Physical Therapy" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Physical Therapy</h3>
@@ -86,7 +96,7 @@
 									</div>
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Occupational Therapy.jpg" alt="Occupational Therapy" />
+											<img src="images/new images/Occupational Therapy.jpg" alt="Occupational Therapy" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Occupational Therapy</h3>
@@ -95,7 +105,7 @@
 									</div>
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Wound Care.jpg" alt="Wound Care" />
+											<img src="images/new images/Wound Care.jpg" alt="Wound Care" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Wound Care</h3>
@@ -104,7 +114,7 @@
 									</div>
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Speech Therapy.jpg" alt="Speech Therapy" />
+											<img src="images/new images/Speech Therapy.jpg" alt="Speech Therapy" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Speech Therapy</h3>
@@ -113,7 +123,7 @@
 									</div>
 									<div class="service-card">
 										<div class="service-image">
-											<img src="images/new images/Home Health Aides.jpg" alt="Home Health Aides" />
+											<img src="images/new images/Home Health Aides.jpg" alt="Home Health Aides" decoding="async" loading="lazy" />
 										</div>
 										<div class="service-content">
 											<h3>Home Health Aides</h3>
@@ -235,11 +245,11 @@
 
 						<!-- Contact Section -->
 							<section id="contact" class="main special">
-								<header class="major">
+								<header class="major" style="margin-bottom: 0.5em !important; padding-bottom: 0 !important; margin: 0 !important;">
 									<h2>Feel Free to Message Us</h2>
 									<p>Have questions or concerns about our services? We're here to help.</p>
 								</header>
-								<div class="contact-container">
+								<div class="contact-container" style="margin-top: 0.5em !important; padding-top: 0 !important; margin-bottom: 0 !important; margin: 0.5em auto 0 auto !important;">
 									<div class="contact-form">
 										<form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
 											<input type="hidden" name="access_key" value="2c593d2a-fcc4-4eef-8918-96e1a791805b">
@@ -267,6 +277,32 @@
 										</form>
 									</div>
 								</div>
+								
+								<!-- Social Media Links and Hiring Button -->
+								<div class="post-form-actions" style="text-align: center; margin-top: 0.5em !important; padding-top: 0 !important; margin: 0.5em auto 0 auto !important;">
+									<!-- Social Media Links -->
+									<div class="social-media-section" style="margin: 0.5em 0;">
+										<h3 style="margin-bottom: 0.5em; color: #1e3a8a;">Connect With Us</h3>
+										<div class="social-links">
+											<a href="https://www.facebook.com/share/1APZ6WHw42/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link facebook">
+												<i class="fab fa-facebook-f"></i>
+												<span>Facebook</span>
+											</a>
+											<a href="https://www.instagram.com/rockofageshhc?igsh=cnFoN3lpd3Jkb2Fk&utm_source=qr" target="_blank" rel="noopener" class="social-link instagram">
+												<i class="fab fa-instagram"></i>
+												<span>Instagram</span>
+											</a>
+										</div>
+									</div>
+									
+									<!-- Hiring Callout -->
+									<div class="careers-callout" style="margin-top: 1em;">
+										<a href="careers.html" class="careers-callout-link" target="_blank" rel="noopener">
+											<span class="pulse-badge" aria-hidden="true">Hiring</span>
+											We're hiring! Explore Nursing & Medical roles →
+										</a>
+									</div>
+								</div>
 							</section>
 
 						<!-- Testimonials Section -->
@@ -277,7 +313,7 @@
 								
 								<!-- Testimonials Image -->
 								<div class="testimonials-image">
-									<img src="images/new images/closeup-support-hands.jpg" alt="Supportive Care" />
+									<img src="images/new images/closeup-support-hands.jpg" alt="Supportive Care" decoding="async" loading="lazy" />
 								</div>
 								<div class="testimonials-container">
 									<div class="testimonials-carousel">
@@ -590,6 +626,19 @@
 						<section>
 							<h2>Rock of Ages Home Health Care</h2>
 							<p>Home Health Specialists You Can Trust. We provide compassionate, professional care in the comfort of your own home, helping you maintain independence and improve your quality of life.</p>
+							
+							<!-- Social Media Links -->
+							<h3 style="margin-top: 1.5em; margin-bottom: 0.5em; color: white;">Follow Us</h3>
+							<div class="footer-social-links" style="margin-top: 0.5em; justify-content: flex-start;">
+								<a href="https://www.facebook.com/share/1APZ6WHw42/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link facebook">
+									<i class="fab fa-facebook-f"></i>
+									<span>Facebook</span>
+								</a>
+								<a href="https://www.instagram.com/rockofageshhc?igsh=cnFoN3lpd3Jkb2Fk&utm_source=qr" target="_blank" rel="noopener" class="social-link instagram">
+									<i class="fab fa-instagram"></i>
+									<span>Instagram</span>
+								</a>
+							</div>
 						</section>
 						<section>
 							<h2>Contact Information</h2>
@@ -606,6 +655,7 @@
 							<h3>We Make Referrals Easy</h3>
 							<p>Just pass along the info below to your referring medical professionals. They can refer over the phone, via fax, or by email.</p>
 						</section>
+
 						<p class="copyright">&copy; 2025 Rock of Ages Home Health Care Inc. All rights reserved.</p>
 					</footer>
 
