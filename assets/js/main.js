@@ -22,9 +22,8 @@
 
 	// Play initial animations as soon as DOM is ready (don't wait for images).
 		$(function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
+			// Let the image preloading handle removing the preload class
+			// This will be handled by the preloadImages function in index.html
 		});
 
 	// Nav.

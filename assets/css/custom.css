@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Force all images to load immediately */
+img {
+    loading: eager !important;
+    fetchpriority: high !important;
+}
+
 /* Performance optimizations to prevent flickering during fast scrolling */
 
 body {
@@ -22,11 +28,32 @@ body {
 /* Change background gradient to modern blue-purple */
 html body {
     background-color: #1a1a2e !important;
-    background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
-    background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
-    background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
-    background-image: url("images/overlay.png"), linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
+    background: -moz-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
+    background: -webkit-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
+    background: -ms-linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
+    background: linear-gradient(45deg, #16213e 15%, #0f3460 85%) !important;
+    position: relative;
 }
+
+/* Overlay removed - if you have overlay.webp, uncomment this section */
+/*
+html body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/overlay.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
 
 /* Logo size control */
 #header.alt .logo img {
@@ -206,6 +233,18 @@ footer .footer-social-links a {
     overflow: hidden;
 }
 
+/* Ensure service images load immediately without opacity transitions */
+.service-card .service-image img {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* Ensure all images load immediately */
+img {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
 .service-card .service-image img {
     width: 100%;
     height: 100%;
@@ -215,6 +254,10 @@ footer .footer-social-links a {
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
+    /* Ensure images are visible immediately */
+    min-height: 180px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
 }
 
 .service-card:hover .service-image img {
@@ -1954,7 +1997,7 @@ html, body {
 
 #header.alt {
     position: relative;
-    background: linear-gradient(rgba(26,26,46,0.68), rgba(26,26,46,0.68)), url('../../images/new images/close-up-people-holding-hands.jpg') center center/cover no-repeat;
+    background: linear-gradient(rgba(26,26,46,0.68), rgba(26,26,46,0.68));
     background-blend-mode: normal;
     border-radius: 2em;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
@@ -1965,6 +2008,22 @@ html, body {
     max-height: 480px;
     padding-top: 3em;
     padding-bottom: 3em;
+}
+
+/* Add header background image as a separate element */
+#header.alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/new images/close-up-people-holding-hands.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
 }
 
 @media screen and (min-width: 1680px) {
@@ -2022,6 +2081,18 @@ html, body {
 /* Pull header up to sit directly beneath the banner */
 .hiring-banner + #wrapper #header.alt {
     margin-top: 0.5em !important;
+}
+
+/* Hide hiring banner on mobile devices */
+@media (max-width: 768px) {
+    .hiring-banner {
+        display: none !important;
+    }
+    
+    /* Adjust header margin when banner is hidden on mobile */
+    .hiring-banner + #wrapper #header.alt {
+        margin-top: 0 !important;
+    }
 }
 
 .blink-dot {
